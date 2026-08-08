@@ -62,6 +62,10 @@ db.sqlite3
 db.sqlite3-journal
 beavers_choice.db
 beavers_choice.db-journal
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
 
 # Flask stuff:
 instance/

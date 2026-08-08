@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "beavers-choice-multi-agent"
+version = "1.0.0"
+description = "Production-structured multi-agent inventory, quoting, and fulfillment system"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.11,<3",
+    "pydantic-ai>=0.4.2,<2",
+]
+
+[project.optional-dependencies]
+diagram = ["matplotlib>=3.9,<4"]
+dev = ["pytest>=8.3,<9"]
+
+[project.scripts]
+beavers-choice = "beavers_choice.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
