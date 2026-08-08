@@ -65,3 +65,33 @@ python -m pytest
 ```
 
 See `PROJECT_REPORT.md` for the design rationale and measured evaluation.
+
+## EngineeringHub MCP
+
+The repository configures the supported first-party EngineeringHub remote MCP
+server in both `.vscode/mcp.json` and `.mcp.json`:
+
+```json
+{
+  "servers": {
+    "enghub": {
+      "url": "https://mcp.eng.ms"
+    }
+  }
+}
+```
+
+Open the repository in VS Code or Visual Studio and reload the window. Windows
+authentication uses the signed-in Microsoft account. VPN/corpnet access may be
+required by organizational policy.
+
+Test in Copilot Chat:
+
+```text
+Search EngineeringHub for IcM endpoints
+```
+
+The older `enghub-mcp start` local CLI remains useful for diagnostics but is
+deprecated by the official
+[`azure-core/enghub-mcp-server-tools`](https://github.com/azure-core/enghub-mcp-server-tools)
+repository in favor of `https://mcp.eng.ms`.
